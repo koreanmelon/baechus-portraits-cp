@@ -1,0 +1,12 @@
+{
+    "name": "baechus-portraits-cp",
+    "version": "1.0.1",
+    "description": "Baechu's Portraits mod for Content Patcher.",
+    "main": "main.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "keywords": [],
+    "author": "koreanmelon",
+    "license": "ISC"
+}

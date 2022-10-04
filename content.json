@@ -1,0 +1,180 @@
+{
+    "Format": "1.25.0",
+    "ConfigSchema": {
+        "SVE": {
+            "AllowValues": "true, false",
+            "DefaultValue": "false"
+        },
+        "Abigail": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Alex": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Elliott": {
+            "AllowValues": "Standard, Short Hair",
+            "Default": "Standard"
+        },
+        "Emily": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Haley": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Harvey": {
+            "AllowValues": "Standard, White Shirt",
+            "Default": "Standard"
+        },
+        "Leah": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Maru": {
+            "AllowValues": "Standard, Long Hair, No Glasses, Long Hair & No Glasses",
+            "Default": "Standard"
+        },
+        "Maru (Hospital)": {
+            "AllowValues": "Standard, Long Hair, No Glasses, Long Hair & No Glasses",
+            "Default": "Standard"
+        },
+        "Penny": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Sam": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Sebastian": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Shane": {
+            "AllowValues": "Standard, Black Shirt",
+            "Default": "Standard"
+        }
+    },
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Portraits/Abigail",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Abigail}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Alex",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Alex}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Elliott",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Elliott}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Emily",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Emily}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Haley",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Haley}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Harvey",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Harvey}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Leah",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Leah}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Maru",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Maru}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Maru_Hospital",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Maru (Hospital)}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Penny",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Penny}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Sam",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Sam}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Sebastian",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Sebastian}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Shane",
+            "FromFile": "assets/base/{{TargetWithoutPath}}_{{Shane}}.png",
+            "Update": "OnLocationChange",
+            "When": {
+                "HasFile:{{FromFile}}": true
+            }
+        }
+    ]
+}
