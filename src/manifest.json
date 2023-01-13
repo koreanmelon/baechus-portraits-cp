@@ -1,7 +1,7 @@
 {
     "Name": "Baechu's Portraits",
     "Author": "orientalmelon",
-    "Version": "1.0.1",
+    "Version": "1.0.2",
     "Description": "Baechu's Portraits mod updated for Content Patcher.",
     "UniqueID": "orientalmelon.baechusportraits",
     "UpdateKeys": ["Nexus:8942"],
