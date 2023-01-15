@@ -3,7 +3,7 @@
     "ConfigSchema": {
         "SVE": {
             "AllowValues": "true, false",
-            "DefaultValue": "false"
+            "Default": "true"
         },
         "Abigail": {
             "AllowValues": "Standard",
