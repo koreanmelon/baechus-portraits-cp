@@ -3,6 +3,8 @@ import json
 import os
 from zipfile import ZipFile
 
+
+
 # Parse command line arguments to determine which action to take
 parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--build", help="Build the mod", action="store_true")
@@ -29,7 +31,6 @@ if args.build:
                 infilePath = os.path.join(root, filename)
                 outfilePath = os.path.join(mod_unique_id, filename)
 
-                # Add file to zip
                 zip_obj.write(infilePath, outfilePath)
 
         for root, dirs, files in os.walk("assets"):
@@ -37,5 +38,4 @@ if args.build:
                 infilePath = os.path.join(root, filename)
                 outfilePath = os.path.join(mod_unique_id, root, filename)
 
-                # Add file to zip
                 zip_obj.write(infilePath, outfilePath)
