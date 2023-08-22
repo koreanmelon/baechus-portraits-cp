@@ -27,7 +27,7 @@ args = parser.parse_args()
 bachelors_m = ["Alex", "Elliott", "Harvey", "Sam", "Sebastian", "Shane"]
 bachelors_f = ["Abigail", "Emily", "Haley", "Leah", "Maru", "Maru_Hospital", "Penny"]
 nonmarriage = ["Caroline", "Clint", "Demetrius", "Dwarf", "Evelyn", "George", "Gus", "Jas", "Jodi", "Kent", "Krobus", "Leo",
-               "Lewis", "Linus", "Marnie", "Marlon", "Pam", "Pierre", "Robin", "Sandy", "Vincent", "Willy", "Wizard"]
+               "Lewis", "Linus", "Marnie", "Pam", "Pierre", "Robin", "Sandy", "Vincent", "Willy", "Wizard"]
 nongiftable = ["Birdie", "Bouncer", "Gil", "Governer", "Grandpa",
                "Gunther", "Henchman", "Marlon", "Morris", "Mr. Qi", "Professor Snail"]
 
@@ -125,18 +125,14 @@ if args.build:
     # Create zip file
     with ZipFile(Path(BUILD, f"{mod_unique_id}_{mod_version}_{build_num:03}.zip"), 'w') as zip_obj:
         # Iterate over all the files in directory
-        logger.debug(f"DATA_DIR: {DATA}")
         for root, dirs, files in os.walk(DATA):
-            logger.debug(f"root: {root}, dirs: {dirs}, files: {files}")
             for filename in files:
                 infilePath = Path(root, filename)
                 outfilePath = Path(mod_unique_id, filename)
 
                 zip_obj.write(infilePath, outfilePath)
 
-        logger.debug(f"ASSETS_DIR: {ASSETS}")
         for root, dirs, files in os.walk(ASSETS):
-            logger.debug(f"root: {root}, dirs: {dirs}, files: {files}")
             for filename in files:
                 infilePath = Path(root, filename)
                 outfilePath = Path(mod_unique_id, root, filename)
