@@ -9,11 +9,13 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s: %(message)s',
                     datefmt='[%m/%d/%Y %I:%M:%S %p]')
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
-ASSETS_DIR = Path("assets")
-BUILD_DIR = Path("build")
-SRC_DIR = Path("src")
+BUILD = Path("build")
+SRC = Path("src")
+
+DATA = Path("data")
+ASSETS = Path(DATA, "assets")
 
 
 # Parse command line arguments to determine which action to take
@@ -37,20 +39,20 @@ sve_characters = ["Alesia", "Andy", "Camilla", "Claire", "Isaac",
 characters = [(name, "base") for name in base_characters] + [(name, "sve") for name in sve_characters]
 
 for name, mod in characters:
-    Path(ASSETS_DIR, mod, name).mkdir(parents=True, exist_ok=True)
+    Path(ASSETS, mod, name).mkdir(parents=True, exist_ok=True)
 
 if args.build:
 
     # Create build directory if it doesn't exist
-    BUILD_DIR.mkdir(parents=True, exist_ok=True)
+    BUILD.mkdir(parents=True, exist_ok=True)
 
     # Validate that all characters have a portrait
     logger.info("Checking portraits...")
     missing = {"base": [], "sve": []}
     for name, mod in characters:
-        std_portrait = Path(ASSETS_DIR, mod, name, f"{name}_Standard.png")
+        std_portrait = Path(ASSETS, mod, name, f"{name}_Standard.png")
         if not std_portrait.exists():
-            portrait = Path(ASSETS_DIR, mod, name, f"{name}.png")
+            portrait = Path(ASSETS, mod, name, f"{name}.png")
             if portrait.exists():
                 portrait.rename(std_portrait)
             else:
@@ -91,7 +93,7 @@ if args.build:
             })
 
     # Write content.json
-    with Path(SRC_DIR, "content.json").open("w") as content_file:
+    with Path(DATA, "content.json").open("w") as content_file:
         json.dump(content_json, content_file, indent=4)
 
     logger.info("Finished writing content.json...")
@@ -101,7 +103,7 @@ if args.build:
     mod_unique_id = ""
     mod_version = ""
     build_num = 0
-    with Path("src", "manifest.json").open("r") as manifest_file:
+    with Path(DATA, "manifest.json").open("r") as manifest_file:
         manifest = json.load(manifest_file)
         mod_unique_id = manifest["UniqueID"]
         mod_version = manifest["Version"]
@@ -116,16 +118,20 @@ if args.build:
     logger.info("Building zip file...")
 
     # Create zip file
-    with ZipFile(Path(BUILD_DIR, f"{mod_unique_id}_{mod_version}_{build_num:03}.zip"), 'w') as zip_obj:
+    with ZipFile(Path(BUILD, f"{mod_unique_id}_{mod_version}_{build_num:03}.zip"), 'w') as zip_obj:
         # Iterate over all the files in directory
-        for root, dirs, files in os.walk("src"):
+        logger.debug(f"DATA_DIR: {DATA}")
+        for root, dirs, files in os.walk(DATA):
+            logger.debug(f"root: {root}, dirs: {dirs}, files: {files}")
             for filename in files:
                 infilePath = Path(root, filename)
                 outfilePath = Path(mod_unique_id, filename)
 
                 zip_obj.write(infilePath, outfilePath)
 
-        for root, dirs, files in os.walk("assets"):
+        logger.debug(f"ASSETS_DIR: {ASSETS}")
+        for root, dirs, files in os.walk(ASSETS):
+            logger.debug(f"root: {root}, dirs: {dirs}, files: {files}")
             for filename in files:
                 infilePath = Path(root, filename)
                 outfilePath = Path(mod_unique_id, root, filename)
