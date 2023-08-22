@@ -2,10 +2,16 @@
     "Name": "Baechu's Portraits",
     "Author": "orientalmelon",
     "Version": "1.0.2",
-    "Description": "Baechu's Portraits mod updated for Content Patcher.",
+    "Description": "Baechu's Portraits converted for Content Patcher.",
     "UniqueID": "orientalmelon.baechusportraits",
     "UpdateKeys": ["Nexus:8942"],
     "ContentPackFor": {
         "UniqueID": "Pathoschild.ContentPatcher"
-    }
+    },
+    "Dependencies": [
+        {
+            "UniqueID": "FlashShifter.SVECode",
+            "MinimumVersion": "1.14.18"
+        }
+    ]
 }

@@ -30,3 +30,4 @@ Currently, the following bachelor/bachelorette portraits are changed:
 
 -   [ ] Add the seasonal portraits
 -   [ ] Better scripting for building the mod
+-   [ ] Convert Maru (Hospital) Standard Portrait
