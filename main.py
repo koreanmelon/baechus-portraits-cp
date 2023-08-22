@@ -11,10 +11,10 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s: %(message)s',
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-BUILD = Path("build")
-SRC = Path("src")
-
-DATA = Path("data")
+ROOT = Path(__file__).parent
+BUILD = Path(ROOT, "build")
+SRC = Path(ROOT, "src")
+DATA = Path(ROOT, "data")
 ASSETS = Path(DATA, "assets")
 
 
@@ -36,9 +36,14 @@ base_characters = bachelors_m + bachelors_f + nonmarriage + nongiftable
 sve_characters = ["Alesia", "Andy", "Camilla", "Claire", "Isaac",
                   "Magnus", "Morgan", "Olivia", "Scarlett", "Sophia", "Susan", "Victor"]
 
-characters = [(name, "base") for name in base_characters] + [(name, "sve") for name in sve_characters]
 
-for name, mod in characters:
+characters = [(name, "base", ["Standard"]) for name in base_characters] + \
+    [(name, "sve", ["Standard"]) for name in sve_characters]
+
+variants = json.load(Path(ROOT, "config.json").open("r"))["Variants"]
+characters = [(name, mod, styles + variants[name] if name in variants else styles) for name, mod, styles in characters]
+
+for name, mod, _ in characters:
     Path(ASSETS, mod, name).mkdir(parents=True, exist_ok=True)
 
 if args.build:
@@ -49,7 +54,7 @@ if args.build:
     # Validate that all characters have a portrait
     logger.info("Checking portraits...")
     missing = {"base": [], "sve": []}
-    for name, mod in characters:
+    for name, mod, _ in characters:
         std_portrait = Path(ASSETS, mod, name, f"{name}_Standard.png")
         if not std_portrait.exists():
             portrait = Path(ASSETS, mod, name, f"{name}.png")
@@ -75,10 +80,10 @@ if args.build:
         "Changes": []
     }
 
-    for name, mod in characters:
+    for name, mod, styles in characters:
         content_json["ConfigSchema"][name] = {
-            "AllowValues": "Standard",
-            "Default": "Standard"
+            "AllowValues": ", ".join(styles),
+            "Default": styles[0]
         }
 
         content_json["Changes"].append(

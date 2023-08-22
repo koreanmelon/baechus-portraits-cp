@@ -10,11 +10,11 @@
             "Default": "Standard"
         },
         "Elliott": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, Short Hair",
             "Default": "Standard"
         },
         "Harvey": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, White Shirt",
             "Default": "Standard"
         },
         "Sam": {
@@ -26,7 +26,7 @@
             "Default": "Standard"
         },
         "Shane": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, Black Shirt",
             "Default": "Standard"
         },
         "Abigail": {
@@ -46,11 +46,11 @@
             "Default": "Standard"
         },
         "Maru": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, No Glasses, Long Hair, Long Hair & No Glasses",
             "Default": "Standard"
         },
         "Maru_Hospital": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, No Glasses, Long Hair, Long Hair & No Glasses",
             "Default": "Standard"
         },
         "Penny": {
@@ -126,7 +126,7 @@
             "Default": "Standard"
         },
         "Pierre": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, No Glasses",
             "Default": "Standard"
         },
         "Robin": {
@@ -202,7 +202,7 @@
             "Default": "Standard"
         },
         "Claire": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, Joja, Theater",
             "Default": "Standard"
         },
         "Isaac": {
@@ -226,7 +226,7 @@
             "Default": "Standard"
         },
         "Sophia": {
-            "AllowValues": "Standard",
+            "AllowValues": "Standard, Makeup",
             "Default": "Standard"
         },
         "Susan": {
