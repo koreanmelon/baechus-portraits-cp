@@ -117,10 +117,6 @@
             "AllowValues": "Standard",
             "Default": "Standard"
         },
-        "Marlon": {
-            "AllowValues": "Standard",
-            "Default": "Standard"
-        },
         "Pam": {
             "AllowValues": "Standard",
             "Default": "Standard"
@@ -174,6 +170,10 @@
             "Default": "Standard"
         },
         "Henchman": {
+            "AllowValues": "Standard",
+            "Default": "Standard"
+        },
+        "Marlon": {
             "AllowValues": "Standard",
             "Default": "Standard"
         },
@@ -242,7 +242,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Alex",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Alex}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Alex}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -251,7 +251,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Elliott",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Elliott}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Elliott}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -260,7 +260,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Harvey",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Harvey}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Harvey}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -269,7 +269,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Sam",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Sam}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sam}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -278,7 +278,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Sebastian",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Sebastian}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sebastian}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -287,7 +287,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Shane",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Shane}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Shane}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -296,7 +296,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Abigail",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Abigail}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Abigail}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -305,7 +305,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Emily",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Emily}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Emily}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -314,7 +314,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Haley",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Haley}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Haley}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -323,7 +323,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Leah",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Leah}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Leah}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -332,7 +332,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Maru",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Maru}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Maru}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -341,7 +341,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Maru_Hospital",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Maru_Hospital}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Maru_Hospital}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -350,7 +350,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Penny",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Penny}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Penny}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -359,7 +359,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Caroline",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Caroline}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Caroline}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -368,7 +368,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Clint",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Clint}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Clint}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -377,7 +377,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Demetrius",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Demetrius}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Demetrius}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -386,7 +386,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Dwarf",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Dwarf}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Dwarf}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -395,7 +395,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Evelyn",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Evelyn}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Evelyn}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -404,7 +404,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/George",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{George}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{George}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -413,7 +413,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Gus",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Gus}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Gus}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -422,7 +422,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Jas",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Jas}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Jas}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -431,7 +431,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Jodi",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Jodi}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Jodi}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -440,7 +440,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Kent",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Kent}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Kent}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -449,7 +449,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Krobus",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Krobus}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Krobus}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -458,7 +458,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Leo",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Leo}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Leo}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -467,7 +467,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Lewis",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Lewis}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Lewis}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -476,7 +476,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Linus",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Linus}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Linus}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -485,16 +485,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Marnie",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Marnie}.png",
-            "Update": "OnLocationChange",
-            "When": {
-                "HasFile:{{FromFile}}": true
-            }
-        },
-        {
-            "Action": "EditImage",
-            "Target": "Portraits/Marlon",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Marlon}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Marnie}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -503,7 +494,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Pam",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Pam}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Pam}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -512,7 +503,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Pierre",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Pierre}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Pierre}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -521,7 +512,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Robin",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Robin}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Robin}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -530,7 +521,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Sandy",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Sandy}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sandy}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -539,7 +530,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Vincent",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Vincent}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Vincent}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -548,7 +539,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Willy",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Willy}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Willy}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -557,7 +548,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Wizard",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Wizard}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Wizard}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -566,7 +557,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Birdie",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Birdie}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Birdie}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -575,7 +566,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Bouncer",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Bouncer}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Bouncer}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -584,7 +575,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Gil",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Gil}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Gil}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -593,7 +584,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Governer",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Governer}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Governer}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -602,7 +593,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Grandpa",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Grandpa}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Grandpa}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -611,7 +602,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Gunther",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Gunther}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Gunther}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -620,7 +611,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Henchman",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Henchman}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Henchman}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -629,7 +620,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Marlon",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Marlon}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Marlon}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -638,7 +629,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Morris",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Morris}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Morris}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -647,7 +638,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Mr. Qi",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Mr. Qi}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Mr. Qi}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -656,7 +647,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Professor Snail",
-            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Professor Snail}.png",
+            "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Professor Snail}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -665,7 +656,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Alesia",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Alesia}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Alesia}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -674,7 +665,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Andy",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Andy}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Andy}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -683,7 +674,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Camilla",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Camilla}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Camilla}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -692,7 +683,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Claire",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Claire}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Claire}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -701,7 +692,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Isaac",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Isaac}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Isaac}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -710,7 +701,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Magnus",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Magnus}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Magnus}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -719,7 +710,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Morgan",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Morgan}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Morgan}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -728,7 +719,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Olivia",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Olivia}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Olivia}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -737,7 +728,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Scarlett",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Scarlett}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Scarlett}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -746,7 +737,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Sophia",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Sophia}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sophia}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -755,7 +746,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Susan",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Susan}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Susan}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true
@@ -764,7 +755,7 @@
         {
             "Action": "EditImage",
             "Target": "Portraits/Victor",
-            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{Victor}.png",
+            "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Victor}}.png",
             "Update": "OnLocationChange",
             "When": {
                 "HasFile:{{FromFile}}": true

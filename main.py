@@ -11,16 +11,16 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s: %(message)s',
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-ROOT = Path(__file__).parent
-BUILD = Path(ROOT, "build")
-SRC = Path(ROOT, "src")
-DATA = Path(ROOT, "data")
+BUILD = Path("build")
+SRC = Path("src")
+DATA = Path("data")
 ASSETS = Path(DATA, "assets")
 
 
 # Parse command line arguments to determine which action to take
 parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--build", help="Build the mod", action="store_true")
+parser.add_argument("--dev", help="Build in development mode", action="store_true")
 args = parser.parse_args()
 
 
@@ -40,7 +40,7 @@ sve_characters = ["Alesia", "Andy", "Camilla", "Claire", "Isaac",
 characters = [(name, "base", ["Standard"]) for name in base_characters] + \
     [(name, "sve", ["Standard"]) for name in sve_characters]
 
-variants = json.load(Path(ROOT, "config.json").open("r"))["Variants"]
+variants = json.load(Path("config.json").open("r"))["Variants"]
 characters = [(name, mod, styles + variants[name] if name in variants else styles) for name, mod, styles in characters]
 
 for name, mod, _ in characters:
@@ -88,9 +88,9 @@ if args.build:
 
         content_json["Changes"].append(
             {
-                "Action": "EditImage",
+                "Action": "Load",
                 "Target": f"Portraits/{name}",
-                "FromFile": f"assets/{mod}/{{{{TargetWithoutPath}}}}/{{{{TargetWithoutPath}}}}_{{{name}}}.png",
+                "FromFile": f"assets/{mod}/{{{{TargetWithoutPath}}}}/{{{{TargetWithoutPath}}}}_{{{{{name}}}}}.png",
                 "Update": "OnLocationChange",
                 "When": {
                     "HasFile:{{FromFile}}": True
@@ -125,19 +125,15 @@ if args.build:
     # Create zip file
     with ZipFile(Path(BUILD, f"{mod_unique_id}_{mod_version}_{build_num:03}.zip"), 'w') as zip_obj:
         # Iterate over all the files in directory
-        for root, dirs, files in os.walk(DATA):
-            for filename in files:
-                infilePath = Path(root, filename)
-                outfilePath = Path(mod_unique_id, filename)
+        for path in DATA.glob("**/*"):
+            zip_obj.write(path, path.relative_to(DATA))
 
-                zip_obj.write(infilePath, outfilePath)
+        # for root, dirs, files in os.walk(DATA):
+        #     for filename in files:
+        #         infilePath = Path(root, filename)
+        #         outfilePath = Path(mod_unique_id, root, filename)
 
-        for root, dirs, files in os.walk(ASSETS):
-            for filename in files:
-                infilePath = Path(root, filename)
-                outfilePath = Path(mod_unique_id, root, filename)
-
-                zip_obj.write(infilePath, outfilePath)
+        #         zip_obj.write(infilePath, outfilePath)
 
     logger.info("Finished building zip file...")
 
