@@ -240,7 +240,7 @@
     },
     "Changes": [
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Alex",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Alex}}.png",
             "Update": "OnLocationChange",
@@ -249,7 +249,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Elliott",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Elliott}}.png",
             "Update": "OnLocationChange",
@@ -258,7 +258,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Harvey",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Harvey}}.png",
             "Update": "OnLocationChange",
@@ -267,7 +267,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Sam",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sam}}.png",
             "Update": "OnLocationChange",
@@ -276,7 +276,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Sebastian",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sebastian}}.png",
             "Update": "OnLocationChange",
@@ -285,7 +285,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Shane",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Shane}}.png",
             "Update": "OnLocationChange",
@@ -294,7 +294,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Abigail",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Abigail}}.png",
             "Update": "OnLocationChange",
@@ -303,7 +303,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Emily",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Emily}}.png",
             "Update": "OnLocationChange",
@@ -312,7 +312,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Haley",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Haley}}.png",
             "Update": "OnLocationChange",
@@ -321,7 +321,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Leah",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Leah}}.png",
             "Update": "OnLocationChange",
@@ -330,7 +330,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Maru",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Maru}}.png",
             "Update": "OnLocationChange",
@@ -339,7 +339,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Maru_Hospital",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Maru_Hospital}}.png",
             "Update": "OnLocationChange",
@@ -348,7 +348,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Penny",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Penny}}.png",
             "Update": "OnLocationChange",
@@ -357,7 +357,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Caroline",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Caroline}}.png",
             "Update": "OnLocationChange",
@@ -366,7 +366,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Clint",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Clint}}.png",
             "Update": "OnLocationChange",
@@ -375,7 +375,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Demetrius",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Demetrius}}.png",
             "Update": "OnLocationChange",
@@ -384,7 +384,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Dwarf",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Dwarf}}.png",
             "Update": "OnLocationChange",
@@ -393,7 +393,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Evelyn",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Evelyn}}.png",
             "Update": "OnLocationChange",
@@ -402,7 +402,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/George",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{George}}.png",
             "Update": "OnLocationChange",
@@ -411,7 +411,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Gus",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Gus}}.png",
             "Update": "OnLocationChange",
@@ -420,7 +420,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Jas",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Jas}}.png",
             "Update": "OnLocationChange",
@@ -429,7 +429,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Jodi",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Jodi}}.png",
             "Update": "OnLocationChange",
@@ -438,7 +438,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Kent",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Kent}}.png",
             "Update": "OnLocationChange",
@@ -447,7 +447,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Krobus",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Krobus}}.png",
             "Update": "OnLocationChange",
@@ -456,7 +456,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Leo",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Leo}}.png",
             "Update": "OnLocationChange",
@@ -465,7 +465,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Lewis",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Lewis}}.png",
             "Update": "OnLocationChange",
@@ -474,7 +474,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Linus",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Linus}}.png",
             "Update": "OnLocationChange",
@@ -483,7 +483,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Marnie",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Marnie}}.png",
             "Update": "OnLocationChange",
@@ -492,7 +492,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Pam",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Pam}}.png",
             "Update": "OnLocationChange",
@@ -501,7 +501,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Pierre",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Pierre}}.png",
             "Update": "OnLocationChange",
@@ -510,7 +510,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Robin",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Robin}}.png",
             "Update": "OnLocationChange",
@@ -519,7 +519,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Sandy",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sandy}}.png",
             "Update": "OnLocationChange",
@@ -528,7 +528,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Vincent",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Vincent}}.png",
             "Update": "OnLocationChange",
@@ -537,7 +537,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Willy",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Willy}}.png",
             "Update": "OnLocationChange",
@@ -546,7 +546,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Wizard",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Wizard}}.png",
             "Update": "OnLocationChange",
@@ -555,7 +555,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Birdie",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Birdie}}.png",
             "Update": "OnLocationChange",
@@ -564,7 +564,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Bouncer",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Bouncer}}.png",
             "Update": "OnLocationChange",
@@ -573,7 +573,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Gil",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Gil}}.png",
             "Update": "OnLocationChange",
@@ -582,7 +582,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Governer",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Governer}}.png",
             "Update": "OnLocationChange",
@@ -591,7 +591,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Grandpa",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Grandpa}}.png",
             "Update": "OnLocationChange",
@@ -600,7 +600,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Gunther",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Gunther}}.png",
             "Update": "OnLocationChange",
@@ -609,7 +609,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Henchman",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Henchman}}.png",
             "Update": "OnLocationChange",
@@ -618,7 +618,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Marlon",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Marlon}}.png",
             "Update": "OnLocationChange",
@@ -627,7 +627,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Morris",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Morris}}.png",
             "Update": "OnLocationChange",
@@ -636,7 +636,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Mr. Qi",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Mr. Qi}}.png",
             "Update": "OnLocationChange",
@@ -645,7 +645,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Professor Snail",
             "FromFile": "assets/base/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Professor Snail}}.png",
             "Update": "OnLocationChange",
@@ -654,7 +654,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Alesia",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Alesia}}.png",
             "Update": "OnLocationChange",
@@ -663,7 +663,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Andy",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Andy}}.png",
             "Update": "OnLocationChange",
@@ -672,7 +672,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Camilla",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Camilla}}.png",
             "Update": "OnLocationChange",
@@ -681,7 +681,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Claire",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Claire}}.png",
             "Update": "OnLocationChange",
@@ -690,7 +690,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Isaac",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Isaac}}.png",
             "Update": "OnLocationChange",
@@ -699,7 +699,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Magnus",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Magnus}}.png",
             "Update": "OnLocationChange",
@@ -708,7 +708,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Morgan",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Morgan}}.png",
             "Update": "OnLocationChange",
@@ -717,7 +717,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Olivia",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Olivia}}.png",
             "Update": "OnLocationChange",
@@ -726,7 +726,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Scarlett",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Scarlett}}.png",
             "Update": "OnLocationChange",
@@ -735,7 +735,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Sophia",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Sophia}}.png",
             "Update": "OnLocationChange",
@@ -744,7 +744,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Susan",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Susan}}.png",
             "Update": "OnLocationChange",
@@ -753,7 +753,7 @@
             }
         },
         {
-            "Action": "EditImage",
+            "Action": "Load",
             "Target": "Portraits/Victor",
             "FromFile": "assets/sve/{{TargetWithoutPath}}/{{TargetWithoutPath}}_{{Victor}}.png",
             "Update": "OnLocationChange",
