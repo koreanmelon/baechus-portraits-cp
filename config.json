@@ -1,0 +1,12 @@
+{
+    "Variants": {
+        "Elliott": ["Short Hair"],
+        "Harvey": ["White Shirt"],
+        "Maru": ["No Glasses", "Long Hair", "Long Hair & No Glasses"],
+        "Maru_Hospital": ["No Glasses", "Long Hair", "Long Hair & No Glasses"],
+        "Pierre": ["No Glasses"],
+        "Shane": ["Black Shirt"],
+        "Claire": ["Joja", "Theater"],
+        "Sophia": ["Makeup"]
+    }
+}
