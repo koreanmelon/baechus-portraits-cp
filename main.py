@@ -3,7 +3,7 @@ import json
 import logging
 from pathlib import Path
 
-from src.builder import (BUILD, ASSETS, CPBuilder, ModType)
+from src.builder import (CPBuilder, ModType)
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s: %(message)s',
                     datefmt='[%m/%d/%Y %I:%M:%S %p]')
@@ -40,7 +40,7 @@ variants = mod_json["config"]["variants"]
 characters = [(name, mod, styles + variants[name] if name in variants else styles) for name, mod, styles in characters]
 
 for name, mod, _ in characters:
-    Path(ASSETS, mod, name).mkdir(parents=True, exist_ok=True)
+    Path("assets", mod, name).mkdir(parents=True, exist_ok=True)
 
 if args.build:
     # Create build directory if it doesn't exist
@@ -49,9 +49,9 @@ if args.build:
     logger.info("Checking portraits...")
     missing = {"base": [], "sve": []}
     for name, mod, _ in characters:
-        std_portrait = Path(ASSETS, mod, name, f"{name}_Standard.png")
+        std_portrait = Path("assets", mod, name, f"{name}_Standard.png")
         if not std_portrait.exists():
-            portrait = Path(ASSETS, mod, name, f"{name}.png")
+            portrait = Path("assets", mod, name, f"{name}.png")
             if portrait.exists():
                 portrait.rename(std_portrait)
             else:
