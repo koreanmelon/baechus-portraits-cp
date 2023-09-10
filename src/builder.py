@@ -23,7 +23,7 @@ class CPBuilder:
         self.manifest_json = None
         self.content_json = None
 
-        self.asset_dir = Path("assets")
+        self.assets_dir = Path("assets")
 
         self.build_dir = Path("build")
         self.build_dir.mkdir(parents=True, exist_ok=True)
@@ -32,6 +32,8 @@ class CPBuilder:
         self.tmp_dir.mkdir(parents=True, exist_ok=True)
 
     def build(self):
+        logger.info(f"Building content pack ({self.mod_type.value})...")
+
         self.manifest()
         self.content()
         self.config()
@@ -55,17 +57,21 @@ class CPBuilder:
             json.dump(self.config_json, config_file, indent=4)
 
         # Build ZIP file
+        logger.debug("Zipping assets and output files...")
+
         with ZipFile(Path(self.build_dir, f"{self.mod_json['unique_id']}_{self.mod_json['version']}_{discriminator}_{self.mod_type.value}.zip"), 'w') as zip:
             # Iterate over all files in directory
-            for path in self.asset_dir.glob("**/*"):
+            for path in self.assets_dir.glob("**/*"):
                 if (ModType.BASE.value in path.parts) or (self.mod_type.value in path.parts):
-                    zip.write(path, path.relative_to(self.asset_dir.parent))
+                    zip.write(path, path.relative_to(self.assets_dir.parent))
                     continue
 
             for file in self.tmp_dir.glob("*"):
                 zip.write(file, file.relative_to(self.tmp_dir))
 
     def manifest(self):
+        logger.debug("Building manifest.json...")
+
         self.manifest_json = {
             "Name": self.mod_json["name"],
             "Author": self.mod_json["author"],
@@ -94,6 +100,8 @@ class CPBuilder:
             })
 
     def content(self):
+        logger.debug("Building content.json")
+
         self.content_json = {
             "Format": self.mod_json["dependencies"]["Pathoschild.ContentPatcher"],
             "ConfigSchema": {},
@@ -122,6 +130,8 @@ class CPBuilder:
             )
 
     def config(self):
+        logger.debug("Building config.json...")
+
         self.config_json = {}
 
         for name, mod, styles in self.characters:

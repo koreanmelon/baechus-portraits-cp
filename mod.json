@@ -10,6 +10,61 @@
         "FlashShifter.SVECode": "1.14.19"
     },
     "config": {
+        "characters": {
+            "bachelors_m": ["Alex", "Elliott", "Harvey", "Sam", "Sebastian", "Shane"],
+            "bachelors_f": ["Abigail", "Emily", "Haley", "Leah", "Maru", "Maru_Hospital", "Penny"],
+            "nonmarriage": [
+                "Caroline",
+                "Clint",
+                "Demetrius",
+                "Dwarf",
+                "Evelyn",
+                "George",
+                "Gus",
+                "Jas",
+                "Jodi",
+                "Kent",
+                "Krobus",
+                "Leo",
+                "Lewis",
+                "Linus",
+                "Marnie",
+                "Pam",
+                "Pierre",
+                "Robin",
+                "Sandy",
+                "Vincent",
+                "Willy",
+                "Wizard"
+            ],
+            "nongiftable": [
+                "Birdie",
+                "Bouncer",
+                "Gil",
+                "Governer",
+                "Grandpa",
+                "Gunther",
+                "Henchman",
+                "Marlon",
+                "Morris",
+                "Mr. Qi",
+                "Professor Snail"
+            ],
+            "sve": [
+                "Alesia",
+                "Andy",
+                "Camilla",
+                "Claire",
+                "Isaac",
+                "Magnus",
+                "Morgan",
+                "Olivia",
+                "Scarlett",
+                "Sophia",
+                "Susan",
+                "Victor"
+            ]
+        },
         "variants": {
             "Elliott": ["Short Hair"],
             "Harvey": ["White Shirt"],
