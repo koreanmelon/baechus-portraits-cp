@@ -1,9 +1,9 @@
 import argparse
 import json
 import logging
-import os
 from pathlib import Path
-from zipfile import ZipFile
+
+from src.builder import (BUILD, ASSETS, CPBuilder, ModType)
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s: %(message)s',
                     datefmt='[%m/%d/%Y %I:%M:%S %p]')
@@ -11,16 +11,11 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s: %(message)s',
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-BUILD = Path("build")
-SRC = Path("src")
-DATA = Path("data")
-ASSETS = Path(DATA, "assets")
-
 
 # Parse command line arguments to determine which action to take
 parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--build", help="Build the mod", action="store_true")
-parser.add_argument("--dev", help="Build in development mode", action="store_true")
+parser.add_argument("-d", "--dev", help="Build in development mode", action="store_true")
 args = parser.parse_args()
 
 
@@ -40,16 +35,15 @@ sve_characters = ["Alesia", "Andy", "Camilla", "Claire", "Isaac",
 characters = [(name, "base", ["Standard"]) for name in base_characters] + \
     [(name, "sve", ["Standard"]) for name in sve_characters]
 
-variants = json.load(Path("config.json").open("r"))["Variants"]
+mod_json = json.load(Path("mod.json").open("r"))
+variants = mod_json["config"]["variants"]
 characters = [(name, mod, styles + variants[name] if name in variants else styles) for name, mod, styles in characters]
 
 for name, mod, _ in characters:
     Path(ASSETS, mod, name).mkdir(parents=True, exist_ok=True)
 
 if args.build:
-
     # Create build directory if it doesn't exist
-    BUILD.mkdir(parents=True, exist_ok=True)
 
     # Validate that all characters have a portrait
     logger.info("Checking portraits...")
@@ -67,74 +61,24 @@ if args.build:
     for mod, names in missing.items():
         logger.debug(f"{mod} ({len(names)}): {names}")
 
-    # Write content.json
-    logger.info("Writing content.json...")
-    content_json = {
-        "Format": "1.29.0",
-        "ConfigSchema": {
-            "SVE": {
-                "AllowValues": "true, false",
-                "Default": "true"
-            }
-        },
-        "Changes": []
-    }
+    # content_json_sve = copy.deepcopy(content_json_base)
 
-    for name, mod, styles in characters:
-        content_json["ConfigSchema"][name] = {
-            "AllowValues": ", ".join(styles),
-            "Default": styles[0]
-        }
+    # Build base content pack
+    logger.info("Building content pack for base")
+    base = CPBuilder(
+        mod_json=mod_json,
+        mod_type=ModType.BASE,
+        characters=characters
+    )
+    base.build()
 
-        content_json["Changes"].append(
-            {
-                "Action": "Load",
-                "Target": f"Portraits/{name}",
-                "FromFile": f"assets/{mod}/{{{{TargetWithoutPath}}}}/{{{{TargetWithoutPath}}}}_{{{{{name}}}}}.png",
-                "Update": "OnLocationChange",
-                "When": {
-                    "HasFile:{{FromFile}}": True
-                }
-            })
-
-    # Write content.json
-    with Path(DATA, "content.json").open("w") as content_file:
-        json.dump(content_json, content_file, indent=4)
-
-    logger.info("Finished writing content.json...")
-
-    # Read manifest.json
-    logger.info("Reading manifest.json...")
-    mod_unique_id = ""
-    mod_version = ""
-    build_num = 0
-    with Path(DATA, "manifest.json").open("r") as manifest_file:
-        manifest = json.load(manifest_file)
-        mod_unique_id = manifest["UniqueID"]
-        mod_version = manifest["Version"]
-
-    with Path("BUILD_NUM").open("r+") as build_num_file:
-        build_num = int(build_num_file.readline())
-        build_num_file.seek(0)
-        build_num_file.write(str(build_num + 1))
-
-    logger.info("Finished reading manifest.json...")
-
-    logger.info("Building zip file...")
-
-    # Create zip file
-    with ZipFile(Path(BUILD, f"{mod_unique_id}_{mod_version}_{build_num:03}.zip"), 'w') as zip_obj:
-        # Iterate over all the files in directory
-        for path in DATA.glob("**/*"):
-            zip_obj.write(path, path.relative_to(DATA))
-
-        # for root, dirs, files in os.walk(DATA):
-        #     for filename in files:
-        #         infilePath = Path(root, filename)
-        #         outfilePath = Path(mod_unique_id, root, filename)
-
-        #         zip_obj.write(infilePath, outfilePath)
-
-    logger.info("Finished building zip file...")
+    # Build SVE content pack
+    logger.info("Building content pack for sve")
+    sve = CPBuilder(
+        mod_json=mod_json,
+        mod_type=ModType.SVE,
+        characters=characters
+    )
+    sve.build()
 
     logger.info("Done!")
