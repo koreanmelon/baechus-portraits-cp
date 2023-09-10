@@ -37,8 +37,13 @@ jobs:
             - name: Build
               run: |
                   python main.py --build
-            - name: Upload
+            - name: Upload Base
               uses: actions/upload-artifact@v3.1.3
               with:
-                  name: baechus-portraits-cp.zip
-                  path: build/orientalmelon.baechusportraits_*
+                  name: baechus-portraits-cp-base.zip
+                  path: build/orientalmelon.baechusportraits_*_sve.zip
+            - name: Upload SVE
+              uses: actions/upload-artifact@v3.1.3
+              with:
+                  name: baechus-portraits-cp-sve.zip
+                  path: build/orientalmelon.baechusportraits_*_sve.zip
