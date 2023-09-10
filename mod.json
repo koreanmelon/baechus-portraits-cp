@@ -1,7 +1,7 @@
 {
     "name": "Baechu's Portraits",
     "unique_id": "orientalmelon.baechusportraits",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "author": "orientalmelon",
     "update_keys": ["Nexus:8942"],
     "description": "Baechu's Portraits converted for Content Patcher.",
