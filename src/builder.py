@@ -14,7 +14,7 @@ class ModType(Enum):
 
 
 class CPBuilder:
-    def __init__(self, mod_json: object, mod_type: ModType, characters: list) -> None:
+    def __init__(self, mod_json: dict, mod_type: ModType, characters: list) -> None:
         assert "Pathoschild.ContentPatcher" in mod_json["dependencies"]
 
         self.mod_json = mod_json
@@ -59,7 +59,13 @@ class CPBuilder:
         # Build ZIP file
         logger.debug("Zipping assets and output files...")
 
-        with ZipFile(Path(self.build_dir, f"{self.mod_json['unique_id']}_{self.mod_json['version']}_{discriminator}_{self.mod_type.value}.zip"), 'w') as zip:
+        with ZipFile(
+            Path(
+                self.build_dir,
+                f"{self.mod_json['unique_id']}_{self.mod_json['version']}_{discriminator}_{self.mod_type.value}.zip",
+            ),
+            "w",
+        ) as zip:
             # Iterate over all files in directory
             for path in self.assets_dir.glob("**/*"):
                 if (ModType.BASE.value in path.parts) or (self.mod_type.value in path.parts):
@@ -80,7 +86,7 @@ class CPBuilder:
             "UniqueID": self.mod_json["unique_id"],
             "UpdateKeys": self.mod_json["update_keys"],
             "ContentPackFor": {},
-            "Dependencies": []
+            "Dependencies": [],
         }
 
         if "Pathoschild.ContentPatcher" in self.mod_json["dependencies"].keys():
@@ -94,10 +100,12 @@ class CPBuilder:
                 if dep == "FlashShifter.SVECode":
                     continue
 
-            self.manifest_json["Dependencies"].append({
-                "UniqueID": dep,
-                "MinimumVersion": self.mod_json["dependencies"][dep]
-            })
+            self.manifest_json["Dependencies"].append(
+                {
+                    "UniqueID": dep,
+                    "MinimumVersion": self.mod_json["dependencies"][dep],
+                }
+            )
 
     def content(self):
         logger.debug("Building content.json")
@@ -105,7 +113,7 @@ class CPBuilder:
         self.content_json = {
             "Format": self.mod_json["dependencies"]["Pathoschild.ContentPatcher"],
             "ConfigSchema": {},
-            "Changes": []
+            "Changes": [],
         }
 
         for name, mod, styles in self.characters:
@@ -114,7 +122,7 @@ class CPBuilder:
 
             self.content_json["ConfigSchema"][name] = {
                 "AllowValues": ", ".join(styles),
-                "Default": styles[0]
+                "Default": styles[0],
             }
 
             self.content_json["Changes"].append(
@@ -123,9 +131,7 @@ class CPBuilder:
                     "Target": f"Portraits/{name}",
                     "FromFile": f"assets/{mod}/{{{{TargetWithoutPath}}}}/{{{{TargetWithoutPath}}}}_{{{{{name}}}}}.png",
                     "Update": "OnLocationChange",
-                    "When": {
-                        "HasFile:{{FromFile}}": True
-                    }
+                    "When": {"HasFile:{{FromFile}}": True},
                 }
             )
 

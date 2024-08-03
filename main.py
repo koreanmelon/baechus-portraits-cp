@@ -7,7 +7,13 @@ from src.loader import Loader
 if __name__ == "__main__":
     # Parse command line arguments to determine which action to take
     parser = argparse.ArgumentParser()
-    parser.add_argument("-l", "--level", help="Sets the logging level", action="store", default="notset")
+    parser.add_argument(
+        "-l",
+        "--level",
+        help="Sets the logging level",
+        action="store",
+        default="notset",
+    )
 
     args = parser.parse_args()
 
@@ -20,8 +26,10 @@ if __name__ == "__main__":
         "critical": logging.CRITICAL,
     }
 
-    logging.basicConfig(format='%(asctime)s %(levelname)-8s: %(message)s',
-                        datefmt='[%m/%d/%Y %I:%M:%S %p]')
+    logging.basicConfig(
+        format="%(asctime)s %(levelname)-8s: %(message)s",
+        datefmt="[%m/%d/%Y %I:%M:%S %p]",
+    )
 
     logger = logging.getLogger(__name__)
     logger.setLevel(logging_level_map[args.level])
@@ -31,17 +39,9 @@ if __name__ == "__main__":
     mod_json, characters = loader.load_assets()
 
     # Build base content pack
-    base = CPBuilder(
-        mod_json=mod_json,
-        mod_type=ModType.BASE,
-        characters=characters
-    )
+    base = CPBuilder(mod_json=mod_json, mod_type=ModType.BASE, characters=characters)
     base.build()
 
     # Build SVE content pack
-    sve = CPBuilder(
-        mod_json=mod_json,
-        mod_type=ModType.SVE,
-        characters=characters
-    )
+    sve = CPBuilder(mod_json=mod_json, mod_type=ModType.SVE, characters=characters)
     sve.build()

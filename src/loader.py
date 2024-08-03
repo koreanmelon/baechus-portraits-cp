@@ -17,7 +17,6 @@ class Loader:
     def load_assets(self):
         logger.info("Loading assets...")
 
-        # Load mod.json
         logger.debug("Loading mod.json...")
 
         self.mod_json = json.load(Path("mod.json").open("r"))
@@ -69,8 +68,7 @@ class Loader:
                 else:
                     missing[mod].append(f"{name}_Standard.png")
 
-        logger.warning(
-            f"Missing some portraits: {len(missing[ModType.BASE.value])} {ModType.BASE.value}, {len(missing[ModType.SVE.value])} {ModType.SVE.value}")
+        logger.warning(f"Missing some portraits: {len(missing[ModType.BASE.value])} {ModType.BASE.value}, {len(missing[ModType.SVE.value])} {ModType.SVE.value}")
 
         for mod, names in missing.items():
             logger.debug(f"{mod} ({len(names)}): {names}")
