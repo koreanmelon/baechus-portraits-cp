@@ -21,6 +21,9 @@ class Loader:
 
         self.mod_json = json.load(Path("mod.json").open("r"))
 
+        with open("VERSION", "w+") as f:
+            f.write(self.mod_json["version"])
+
         bachelors_m = self.mod_json["config"]["characters"]["bachelors_m"]
         bachelors_f = self.mod_json["config"]["characters"]["bachelors_f"]
         nonmarriage = self.mod_json["config"]["characters"]["nonmarriage"]
