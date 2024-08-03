@@ -1,8 +1,8 @@
 import argparse
 import logging
 
-from src.builder import CPBuilder, ModType
-from src.loader import Loader
+from builder import CPBuilder, ModType
+from loader import Loader
 
 if __name__ == "__main__":
     # Parse command line arguments to determine which action to take
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         datefmt="[%m/%d/%Y %I:%M:%S %p]",
     )
 
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger()
     logger.setLevel(logging_level_map[args.level])
 
     # Load assets

@@ -5,7 +5,7 @@ from enum import Enum
 from pathlib import Path
 from zipfile import ZipFile
 
-logger = logging.getLogger("__main__")
+logger = logging.getLogger()
 
 
 class ModType(Enum):
@@ -68,9 +68,7 @@ class CPBuilder:
         ) as zip:
             # Iterate over all files in directory
             for path in self.assets_dir.glob("**/*"):
-                if (ModType.BASE.value in path.parts) or (
-                    self.mod_type.value in path.parts
-                ):
+                if (ModType.BASE.value in path.parts) or (self.mod_type.value in path.parts):
                     zip.write(path, path.relative_to(self.assets_dir.parent))
                     continue
 
@@ -92,9 +90,7 @@ class CPBuilder:
         }
 
         if "Pathoschild.ContentPatcher" in self.mod_json["dependencies"].keys():
-            self.manifest_json["ContentPackFor"][
-                "UniqueID"
-            ] = "Pathoschild.ContentPatcher"
+            self.manifest_json["ContentPackFor"]["UniqueID"] = "Pathoschild.ContentPatcher"
 
         for dep in self.mod_json["dependencies"].keys():
             if dep == "Pathoschild.ContentPatcher":

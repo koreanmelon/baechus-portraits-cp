@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "baechus-portraits-cp"
-version = "0.1.0"
+version = "1.2.0"
 description = "Baechu's Portraits mod updated for Content Patcher. The original art is from Baechu's Portraits."
 authors = ["Taewon Kim <taewonkim2001@outlook.com>"]
 license = "MIT"

@@ -2,9 +2,9 @@ import json
 import logging
 from pathlib import Path
 
-from src.builder import ModType
+from builder import ModType
 
-logger = logging.getLogger("__main__")
+logger = logging.getLogger()
 
 
 class Loader:
@@ -68,7 +68,9 @@ class Loader:
                 else:
                     missing[mod].append(f"{name}_Standard.png")
 
-        logger.warning(f"Missing some portraits: {len(missing[ModType.BASE.value])} {ModType.BASE.value}, {len(missing[ModType.SVE.value])} {ModType.SVE.value}")
+        logger.warning(
+            f"Missing some portraits: {len(missing[ModType.BASE.value])} {ModType.BASE.value}, {len(missing[ModType.SVE.value])} {ModType.SVE.value}"
+        )
 
         for mod, names in missing.items():
             logger.debug(f"{mod} ({len(names)}): {names}")
