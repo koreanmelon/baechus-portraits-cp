@@ -4,11 +4,11 @@ Stardew Valley Mod - Baechu's Portraits (Content Patcher)
 
 ## Contents <!-- omit in toc -->
 
-- [Overview](#overview)
+- [Characters](#characters)
 - [Portrait Variants](#portrait-variants)
 - [To Do](#to-do)
 
-## Overview
+## Characters
 
 Changes villager portraits to Baechu's (배추한포기) portraits.
 
