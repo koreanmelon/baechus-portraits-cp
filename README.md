@@ -2,6 +2,8 @@
 
 Stardew Valley Mod - Baechu's Portraits (Content Patcher)
 
+https://www.nexusmods.com/stardewvalley/mods/8942
+
 ## Contents <!-- omit in toc -->
 
 - [Characters](#characters)
