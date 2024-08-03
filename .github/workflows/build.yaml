@@ -1,0 +1,36 @@
+name: Build
+
+on:
+    workflow_dispatch:
+    push:
+        branches: [main]
+
+env:
+    PYTHON_VERSION: "3.12"
+    POETRY_VERSION: "1.8.3"
+
+permissions:
+    contents: read
+
+jobs:
+    setup:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout source
+              uses: actions/checkout@v4
+
+            - name: Install Poetry ${{env.POETRY_VERSION}}
+              run: pipx install poetry==${{env.POETRY_VERSION}}
+
+            - name: Setup Python ${{env.PYTHON_VERSION}}
+              uses: actions/setup-python@v5
+              with:
+                  python-version: ${{env.PYTHON_VERSION}}
+                  cache: "poetry"
+
+            - name: Install dependencies
+              run: poetry install --only main
+
+            - name: Build mod
+              run: poetry run python3 main.py
