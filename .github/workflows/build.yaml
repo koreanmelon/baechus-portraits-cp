@@ -45,4 +45,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base
-          path: out/orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base
+          path: out/orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base*
+          if-no-files-found: error
