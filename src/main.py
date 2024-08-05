@@ -4,9 +4,10 @@ import logging
 import shutil
 from pathlib import Path
 
-from builder import build_config, build_content, build_manifest
+from builder import build_config, build_content
 from common import ExpansionType
 from configuration import ASSETS, mod_output_path
+from loader import load_manifest
 
 
 def main():
@@ -25,34 +26,25 @@ def main():
         choices=logging.getLevelNamesMapping().keys(),
         default="NOTSET",
     )
-    parser.add_argument(
-        "-m",
-        "--manifest",
-        help="Specifies the manifest file to use for building the content pack.",
-        action="store",
-        default="manifest.template.json",
-    )
-    parser.add_argument(
-        "-e",
-        "--expansion",
-        help="Specifies which expansions to include in the content pack.",
-        action="store",
-        default=None,
-    )
+    # parser.add_argument(
+    #     "-e",
+    #     "--expansion",
+    #     help="Specifies which expansions to include in the content pack.",
+    #     action="store",
+    #     default=None,
+    # )
 
     args = parser.parse_args()
 
     level: str = args.level
     logger.setLevel(logging.getLevelNamesMapping()[level])
 
-    expansions: list[ExpansionType] = [ExpansionType.BASE]
-    if args.expansion is not None:
-        expansions.append(ExpansionType[args.expansion.upper()])
+    # expansions: list[ExpansionType] = [ExpansionType.BASE]
+    # if args.expansion is not None:
+    #     expansions.append(ExpansionType[args.expansion.upper()])
 
-    manifest_path: str = args.manifest
-
-    # Build manifest.json
-    manifest_json = build_manifest(Path(manifest_path))
+    # Load manifest.json
+    manifest_json = load_manifest(Path("manifest-base.template.json"))
 
     # Build content.json
     content_json = build_content()
@@ -70,7 +62,11 @@ def main():
     output_dir.joinpath("content.json").write_text(json.dumps(content_json, indent=4))
     output_dir.joinpath("config.json").write_text(json.dumps(config_json, indent=4))
 
-    shutil.copytree(ASSETS.joinpath("base"), output_dir.joinpath("assets", "base"))
+    shutil.copytree(
+        src=ASSETS.joinpath(ExpansionType.BASE.value),
+        dst=output_dir.joinpath("assets", ExpansionType.BASE.value),
+        dirs_exist_ok=True,
+    )
 
 
 if __name__ == "__main__":

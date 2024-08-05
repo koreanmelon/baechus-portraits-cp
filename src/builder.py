@@ -1,10 +1,6 @@
 from __future__ import annotations
 
-import json
-from pathlib import Path
-
-from common import CPContentSpec, ExpansionType, SMAPIManifest
-from configuration import SVE_MIN_VERSION, SVE_UNIQUE_ID
+from common import CPContentSpec, ExpansionType
 from loader import get_character_variant_map
 
 
@@ -37,12 +33,3 @@ def build_content(expansion: ExpansionType = ExpansionType.BASE):
     }
 
     return content
-
-
-def build_manifest(template_file: Path, exp_type: ExpansionType = ExpansionType.BASE):
-    manifest: SMAPIManifest = json.loads(template_file.read_text())
-
-    if exp_type == ExpansionType.SVE:
-        manifest["Dependencies"].append({"UniqueID": SVE_UNIQUE_ID, "MinimumVersion": SVE_MIN_VERSION})
-
-    return manifest
