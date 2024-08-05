@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from common import ExpansionType, SMAPIManifest
-from configuration import ASSETS
+from common import ExpansionType, SMAPIDependency, SMAPIManifest
+from configuration import ASSETS, DEPENDENCIES, MANIFEST
 
 
 def get_character_dirs(expansion: ExpansionType = ExpansionType.BASE) -> list[Path]:
@@ -19,5 +19,9 @@ def get_character_variant_map(expansion: ExpansionType = ExpansionType.BASE) -> 
     return {dir.name: get_character_variants(dir) for dir in get_character_dirs(expansion)}
 
 
-def load_manifest(template_file: Path, expansion: ExpansionType = ExpansionType.BASE) -> SMAPIManifest:
-    return json.loads(template_file.read_text())
+def load_manifest() -> SMAPIManifest:
+    return json.loads(MANIFEST.read_text())
+
+
+def load_dependencies(expansion: ExpansionType) -> list[SMAPIDependency]:
+    return json.loads(DEPENDENCIES.joinpath(f"{expansion.value}.json").read_text())

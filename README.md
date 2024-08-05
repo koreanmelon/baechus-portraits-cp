@@ -53,4 +53,4 @@ Not all portraits have variants. However, some portraits have multiple variants.
 ## To Do
 
 -   [ ] Add the seasonal portraits
--   [ ] Convert Maru (Hospital) Standard Portrait
+-   [x] Convert Maru (Hospital) Standard Portrait

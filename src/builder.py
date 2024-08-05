@@ -11,7 +11,7 @@ def build_config(expansion: ExpansionType = ExpansionType.BASE):
     return config
 
 
-def build_content(expansion: ExpansionType = ExpansionType.BASE):
+def build_content(expansion: ExpansionType = ExpansionType.BASE) -> CPContentSpec:
     character_variant_map = get_character_variant_map(expansion)
 
     content: CPContentSpec = {

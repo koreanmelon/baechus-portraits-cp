@@ -2,6 +2,11 @@ from enum import Enum
 from typing import TypedDict
 
 
+class SMAPIDependency(TypedDict):
+    UniqueID: str
+    MinimumVersion: str
+
+
 class SMAPIManifest(TypedDict):
     Name: str
     Author: str
@@ -10,7 +15,7 @@ class SMAPIManifest(TypedDict):
     UniqueID: str
     UpdateKeys: list[str]
     ContentPackFor: dict[str, str]
-    Dependencies: list[dict[str, str]]
+    Dependencies: list[SMAPIDependency]
 
 
 class CPContentConfigSchemaEntry(TypedDict):
