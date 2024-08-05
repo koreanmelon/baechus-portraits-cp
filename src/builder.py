@@ -22,7 +22,7 @@ def build_content(expansion: ExpansionType = ExpansionType.BASE) -> CPContentSpe
                 "Action": "EditImage",
                 "Target": f"Portraits/{name}",
                 "FromFile": f"assets/{expansion.value}/{{{{TargetWithoutPath}}}}/{{{{TargetWithoutPath}}}}_{{{{{name}}}}}.png",
-                "Update": "OnLocationChange",
+                "Update": "OnDayStart, OnLocationChange, OnTimeChange",
                 "When": {"HasFile:{{FromFile}}": True},
             }
             for name in character_variant_map.keys()
