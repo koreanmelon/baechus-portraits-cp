@@ -21,9 +21,14 @@ optional = true
 black = "^24.8.0"
 isort = "^5.13.2"
 flake8 = "^7.1.0"
+flake8-pyproject = "^1.2.3"
 
 [tool.black]
 line-length = 120
 
 [tool.isort]
 profile = "black"
+
+[tool.flake8]
+exclude = [".git", ".venv", "__pycache__", "build"]
+max-line-length = 120
