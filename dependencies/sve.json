@@ -2,5 +2,9 @@
     {
         "UniqueID": "FlashShifter.SVECode",
         "MinimumVersion": "1.14.19"
+    },
+    {
+        "UniqueID": "FlashShifter.StardewValleyExpandedCP",
+        "MinimumVersion": "1.14.19"
     }
 ]
