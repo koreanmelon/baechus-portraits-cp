@@ -20,7 +20,7 @@ class SMAPIManifest(TypedDict):
 
 class CPContentConfigSchemaEntry(TypedDict):
     AllowValues: str
-    Default: str
+    Default: str | bool
 
 
 class CPContentChange(TypedDict):
