@@ -6,7 +6,7 @@ from pathlib import Path
 
 from builder import build_config, build_content
 from common import ExpansionType
-from configuration import ASSETS, mod_output_path
+from configuration import ASSETS, OUTPUT, mod_output_path
 from loader import load_manifest
 
 
@@ -67,6 +67,9 @@ def main():
         dst=output_dir.joinpath("assets", ExpansionType.BASE.value),
         dirs_exist_ok=True,
     )
+
+    # Consumed by GitHub Actions
+    OUTPUT.joinpath("LATEST").write_text(mod_version)
 
 
 if __name__ == "__main__":
