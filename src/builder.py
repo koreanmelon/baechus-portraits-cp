@@ -16,15 +16,12 @@ def build_content(expansion: ExpansionType = ExpansionType.BASE) -> CPContentSpe
 
     content: CPContentSpec = {
         "Format": "2.3.0",
-        "ConfigSchema": {
-            name: {"AllowValues": ", ".join(variants), "Default": "Standard"}
-            for name, variants in character_variant_map.items()
-        },
+        "ConfigSchema": {name: {"AllowValues": ", ".join(variants), "Default": "Standard"} for name, variants in character_variant_map.items()},
         "Changes": [
             {
-                "Action": "Load",
+                "Action": "EditImage",
                 "Target": f"Portraits/{name}",
-                "FromFile": f"assets/base/{{{{TargetWithoutPath}}}}/{{{{TargetWithoutPath}}}}_{{{{{name}}}}}.png",
+                "FromFile": f"assets/{expansion.value}/{{{{TargetWithoutPath}}}}/{{{{TargetWithoutPath}}}}_{{{{{name}}}}}.png",
                 "Update": "OnLocationChange",
                 "When": {"HasFile:{{FromFile}}": True},
             }
