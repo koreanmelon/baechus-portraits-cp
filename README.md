@@ -1,5 +1,7 @@
 # Baechu's Portraits (Content Patcher) <!-- omit in toc -->
 
+[![Build](https://github.com/koreanmelon/baechus-portraits-cp/actions/workflows/build.yaml/badge.svg)](https://github.com/koreanmelon/baechus-portraits-cp/actions/workflows/build.yaml)
+
 Stardew Valley Mod - Baechu's Portraits (Content Patcher)
 
 https://www.nexusmods.com/stardewvalley/mods/8942
