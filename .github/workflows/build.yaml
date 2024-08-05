@@ -34,16 +34,26 @@ jobs:
       - name: Install dependencies
         run: poetry install --only main
 
-      - name: Build content pack
+      - name: Build base content pack
         run: poetry run python3 src/main.py
+
+      - name: Build SVE content pack
+        run: poetry run python3 src/main.py -e SVE
 
       - name: Get metadata
         run: |
           echo "MOD_VERSION=$(cat out/LATEST)" >> $GITHUB_ENV
 
-      - name: Save base game content pack
+      - name: Save base content pack
         uses: actions/upload-artifact@v4
         with:
           name: orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base
           path: out/orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base*
+          if-no-files-found: error
+
+      - name: Save SVE content pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base-sve
+          path: out/orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base-sve*
           if-no-files-found: error
