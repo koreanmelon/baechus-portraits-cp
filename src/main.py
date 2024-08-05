@@ -77,15 +77,16 @@ def main():
     output_dir = mod_output_path(mod_id, mod_version, expansions)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    for expansion in expansions:
+        shutil.copytree(
+            src=ASSETS.joinpath(expansion.value),
+            dst=output_dir.joinpath("assets", expansion.value),
+            dirs_exist_ok=True,
+        )
+
     output_dir.joinpath("manifest.json").write_text(json.dumps(manifest_json, indent=4))
     output_dir.joinpath("content.json").write_text(json.dumps(content_json, indent=4))
     output_dir.joinpath("config.json").write_text(json.dumps(config_json, indent=4))
-
-    shutil.copytree(
-        src=ASSETS.joinpath(ExpansionType.BASE.value),
-        dst=output_dir.joinpath("assets", ExpansionType.BASE.value),
-        dirs_exist_ok=True,
-    )
 
     # Consumed by GitHub Actions
     OUTPUT.joinpath("LATEST").write_text(mod_version)
