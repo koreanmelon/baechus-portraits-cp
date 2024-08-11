@@ -1,0 +1,48 @@
+[
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Sophia",
+        "FromFile": "assets/sve/Sophia/Season/Sophia_{{Season}}_Indoor_{{Weather: current}}_{{Sophia}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "IsOutdoors": false
+        }
+    },
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Sophia",
+        "FromFile": "assets/sve/Sophia/Season/Sophia_{{Season}}_Outdoor_{{Weather: current}}_{{Sophia}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "IsOutdoors": true
+        }
+    },
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Sophia",
+        "FromFile": "assets/sve/Sophia/Season/Sophia_Winter_Indoor_{{Sophia}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": false
+        }
+    },
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Sophia",
+        "FromFile": "assets/sve/Sophia/Season/Sophia_Winter_Outdoor_{{Sophia}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": true
+        }
+    }
+]

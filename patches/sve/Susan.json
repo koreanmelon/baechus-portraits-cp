@@ -1,0 +1,26 @@
+[
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Susan",
+        "FromFile": "assets/sve/Susan/Season/Susan_Winter_Indoor_{{Susan}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": false
+        }
+    },
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Susan",
+        "FromFile": "assets/sve/Susan/Season/Susan_Winter_Outdoor_{{Susan}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": true
+        }
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Andy",
+        "FromFile": "assets/sve/Andy/Season/Andy_Winter_Indoor_{{Andy}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": false
+        }
+    },
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Andy",
+        "FromFile": "assets/sve/Andy/Season/Andy_Winter_Outdoor_{{Andy}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": true
+        }
+    }
+]

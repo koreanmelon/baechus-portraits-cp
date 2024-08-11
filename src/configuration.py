@@ -7,6 +7,7 @@ ASSETS = Path("assets")
 OUTPUT = Path("out")
 MANIFEST = Path("manifest.json")
 DEPENDENCIES = Path("dependencies")
+PATCHES = Path("patches")
 
 
 def mod_output_path(name: str, version: str, expansions: list[ExpansionType] = [ExpansionType.BASE]) -> Path:
