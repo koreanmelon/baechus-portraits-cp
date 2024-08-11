@@ -4,8 +4,8 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from common import ExpansionType, SMAPIDependency, SMAPIManifest
-from configuration import ASSETS, DEPENDENCIES, MANIFEST
+from common import CPContentChange, ExpansionType, SMAPIDependency, SMAPIManifest
+from configuration import ASSETS, DEPENDENCIES, MANIFEST, PATCHES
 
 
 @dataclass
@@ -54,5 +54,12 @@ def load_manifest() -> SMAPIManifest:
     return json.loads(MANIFEST.read_text())
 
 
-def load_dependencies(expansion: ExpansionType) -> list[SMAPIDependency]:
+def load_dependencies(expansion: ExpansionType = ExpansionType.BASE) -> list[SMAPIDependency]:
     return json.loads(DEPENDENCIES.joinpath(f"{expansion.value}.json").read_text())
+
+
+def load_patches(expansion: ExpansionType = ExpansionType.BASE) -> list[CPContentChange]:
+    patches_dir = PATCHES.joinpath(expansion.value)
+    patches: list[CPContentChange] = [patch for character_patches in patches_dir.glob("*") for patch in json.loads(character_patches.read_text())]
+
+    return patches

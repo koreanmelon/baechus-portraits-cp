@@ -1,0 +1,26 @@
+[
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Olivia",
+        "FromFile": "assets/sve/Olivia/Season/Olivia_Winter_Indoor_{{Olivia}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": false
+        }
+    },
+    {
+        "Action": "EditImage",
+        "Target": "Portraits/Olivia",
+        "FromFile": "assets/sve/Olivia/Season/Olivia_Winter_Outdoor_{{Olivia}}.png",
+        "Update": "OnLocationChange",
+        "When": {
+            "HasFile:{{FromFile}}": true,
+            "SeasonalPortraits": true,
+            "Season": "Winter",
+            "IsOutdoors": true
+        }
+    }
+]

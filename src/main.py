@@ -7,7 +7,7 @@ from typing import Optional
 from builder import build_config, build_content
 from common import ExpansionType
 from configuration import ASSETS, OUTPUT, mod_output_path
-from loader import load_dependencies, load_manifest
+from loader import load_dependencies, load_manifest, load_patches
 
 
 def main():
@@ -51,6 +51,8 @@ def main():
 
     # Build content.json
     content_json = build_content()
+    # Handle custom patches
+    content_json["Changes"].extend(load_patches())
 
     # Builder config.json
     config_json = build_config()
@@ -69,6 +71,9 @@ def main():
 
         expansion_config = build_config(expansion)
         config_json |= expansion_config
+
+        # Handle custom patches
+        content_json["Changes"].extend(load_patches(expansion))
 
     # Create outputs
     mod_id = manifest_json["UniqueID"]
