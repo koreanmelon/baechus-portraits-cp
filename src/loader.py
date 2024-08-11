@@ -27,7 +27,7 @@ def get_character_dirs(expansion: ExpansionType = ExpansionType.BASE) -> list[Pa
 
 
 def get_character_variants(dir: Path) -> list[str]:
-    return [parse_asset_name(asset.name)[1] for asset in dir.glob("*") if asset.is_file()]
+    return [parse_asset_name(asset.name)[-1] for asset in dir.glob("*") if asset.is_file()]
 
 
 def get_character_variant_map(expansion: ExpansionType = ExpansionType.BASE) -> dict[str, list[str]]:
