@@ -19,4 +19,4 @@ def mod_output_path(name: str, version: str, expansions: list[ExpansionType] = [
         process = subprocess.Popen(["git", "rev-parse", "--short", "HEAD"], shell=False, stdout=subprocess.PIPE)
         discriminator = f"+{process.communicate()[0].strip().decode()}"
 
-    return OUTPUT.joinpath(f"{name}-{version}-{"-".join(expansion.value for expansion in expansions)}{discriminator}")
+    return OUTPUT.joinpath(f"{name}-{version}-{'-'.join(expansion.value for expansion in expansions)}{discriminator}")
