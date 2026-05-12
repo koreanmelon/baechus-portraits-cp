@@ -34,11 +34,8 @@ jobs:
         with:
           python-version: ${{env.PYTHON_VERSION}}
 
-      - name: Install dependencies
-        run: uv sync --no-dev
-
       - name: Build base content pack
-        run: uv run python3 src/main.py
+        run: uvx --from ../svpbuild svpbuild --source . --out ./out --include base
 
       - name: Get metadata
         run: |
@@ -69,11 +66,8 @@ jobs:
         with:
           python-version: ${{env.PYTHON_VERSION}}
 
-      - name: Install dependencies
-        run: uv sync --no-dev
-
       - name: Build SVE content pack
-        run: uv run python3 src/main.py -e SVE
+        run: uvx --from ../svpbuild svpbuild --source . --out ./out --include base sve
 
       - name: Get metadata
         run: |
