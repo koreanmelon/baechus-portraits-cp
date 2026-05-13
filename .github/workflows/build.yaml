@@ -3,12 +3,12 @@ name: Build
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
 
     env:
       PYTHON_VERSION: "3.12"
@@ -28,7 +28,7 @@ jobs:
           python-version: ${{env.PYTHON_VERSION}}
 
       - name: Build Content Pack
-        run: uvx svpbuild
+        run: uvx svpbuild@0.2.0
 
       - name: Get Metadata
         run: |
@@ -40,5 +40,5 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: ${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
-          path: build/out/${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
+          path: build/${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
           if-no-files-found: error
