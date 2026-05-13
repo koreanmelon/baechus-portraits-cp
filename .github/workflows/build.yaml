@@ -28,7 +28,7 @@ jobs:
           python-version: ${{env.PYTHON_VERSION}}
 
       - name: Build Content Pack
-        run: uvx svpbuild
+        run: uvx svpbuild@0.2.0
 
       - name: Get Metadata
         run: |
