@@ -1,7 +1,8 @@
 {
+    "$schema": "https://smapi.io/schemas/manifest.json",
     "Name": "Baechu's Portraits",
     "Author": "orientalmelon",
-    "Version": "1.3.3",
+    "Version": "1.4.0",
     "Description": "Baechu's Portraits converted for Content Patcher.",
     "UniqueID": "orientalmelon.baechusportraits",
     "UpdateKeys": ["Nexus:8942"],
