@@ -2,80 +2,45 @@ name: Build
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-env:
-  PYTHON_VERSION: "3.12"
-  MOD_VERSION: "x.x.x"
-  MOD_BUILD_STAGE: "prod"
 
 permissions:
   contents: read
 
 jobs:
-  build-base:
+  build:
     runs-on: ubuntu-latest
+
+    env:
+      PYTHON_VERSION: "3.12"
+      MOD_VERSION: "0.0.0"
+      MOD_ID: "unknown"
 
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v3
+        uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-          cache-dependency-glob: "uv.lock"
 
       - name: Setup Python ${{env.PYTHON_VERSION}}
         uses: actions/setup-python@v5
         with:
           python-version: ${{env.PYTHON_VERSION}}
 
-      - name: Build base content pack
-        run: uvx --from ../svpbuild svpbuild --source . --out ./out --include base
+      - name: Build Content Pack
+        run: uvx svpbuild
 
-      - name: Get metadata
+      - name: Get Metadata
         run: |
-          echo "MOD_VERSION=$(cat out/LATEST)" >> $GITHUB_ENV
+          MOD_VERSION=$(jq -r .Version manifest.json)
+          MOD_ID=$(jq -r .UniqueID manifest.json)
+          echo "MOD_VERSION=$MOD_VERSION" >> $GITHUB_ENV
+          echo "MOD_ID=$MOD_ID" >> $GITHUB_ENV
 
-      - name: Save base content pack
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-          name: orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base
-          path: out/orientalmelon.baechusportraits-*-base
-          if-no-files-found: error
-
-  build-sve:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
-        with:
-          enable-cache: true
-          cache-dependency-glob: "uv.lock"
-
-      - name: Setup Python ${{env.PYTHON_VERSION}}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{env.PYTHON_VERSION}}
-
-      - name: Build SVE content pack
-        run: uvx --from ../svpbuild svpbuild --source . --out ./out --include base sve
-
-      - name: Get metadata
-        run: |
-          echo "MOD_VERSION=$(cat out/LATEST)" >> $GITHUB_ENV
-
-      - name: Save SVE content pack
-        uses: actions/upload-artifact@v4
-        with:
-          name: orientalmelon.baechusportraits-${{ env.MOD_VERSION }}-base-sve
-          path: out/orientalmelon.baechusportraits-*-base-sve
+          name: ${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
+          path: build/out/${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
           if-no-files-found: error
