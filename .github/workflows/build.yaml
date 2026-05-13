@@ -12,6 +12,7 @@ jobs:
 
     env:
       PYTHON_VERSION: "3.12"
+      SVPBUILD_VERSION: "0.2.0"
       MOD_VERSION: "0.0.0"
       MOD_ID: "unknown"
 
@@ -19,16 +20,14 @@ jobs:
       - uses: actions/checkout@v6
 
       - uses: astral-sh/setup-uv@v8.1.0
-        with:
-          enable-cache: true
 
-      - name: Setup Python ${{env.PYTHON_VERSION}}
-        uses: actions/setup-python@v5
+      - name: Setup Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v6
         with:
-          python-version: ${{env.PYTHON_VERSION}}
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Build Content Pack
-        run: uvx svpbuild@0.2.0
+        run: uvx svpbuild@${{ env.SVPBUILD_VERSION }}
 
       - name: Get Metadata
         run: |
