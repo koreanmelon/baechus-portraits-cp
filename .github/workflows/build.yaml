@@ -39,5 +39,5 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: ${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
-          path: build/${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
+          path: build/
           if-no-files-found: error
