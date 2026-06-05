@@ -12,7 +12,7 @@ jobs:
 
     env:
       PYTHON_VERSION: "3.12"
-      SVPBUILD_VERSION: "0.2.0"
+      SVPBUILD_VERSION: "0.2.2"
       MOD_VERSION: "0.0.0"
       MOD_ID: "unknown"
 
